@@ -59,7 +59,7 @@ function Form() {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState<"info" | "error">(
-    "info"
+    "info",
   );
 
   useEffect(() => {
@@ -90,7 +90,7 @@ function Form() {
   const maxInstallments = monthInstallmentsMap[currentMonth] || 1;
   const installmentCountOptions = Array.from(
     { length: maxInstallments },
-    (_, i) => i + 1
+    (_, i) => i + 1,
   );
 
   const handleChange = (name: string, value: string | number | null) => {
@@ -115,6 +115,16 @@ function Form() {
         return;
       }
 
+      if (!form.age || Number(form.age) < 15) {
+        setSnackbarMessage(
+          "É permitido apenas inscrições a partir de 15 anos.",
+        );
+        setSnackbarSeverity("error");
+        setSnackbarOpen(true);
+        setIsSubmitting(false);
+        return;
+      }
+
       const cidadeValida = municipios.some((m) => m.label === form.city);
 
       if (!cidadeValida) {
@@ -130,7 +140,7 @@ function Form() {
         form.cpf,
         form.email,
         form.notificationDisabled,
-        form.groupName
+        form.groupName,
       );
 
       const customer = customerResponse.id;
@@ -149,7 +159,7 @@ function Form() {
         form.billingType,
         dueDate,
         paymentPayload.installmentCount ?? null,
-        paymentPayload.totalValue ?? paymentPayload.value
+        paymentPayload.totalValue ?? paymentPayload.value,
       );
 
       if (!lastPayment || !lastPayment.invoiceUrl) {
@@ -160,7 +170,7 @@ function Form() {
       await emailService.sendInvoiceEmail(
         form.name,
         form.email,
-        lastPayment.invoiceUrl
+        lastPayment.invoiceUrl,
       );
 
       // 4. Buscar TODOS os pagamentos do cliente
@@ -214,7 +224,7 @@ function Form() {
       setSnackbarMessage(
         err.response?.data?.message ||
           err.message ||
-          "Erro ao enviar formulário"
+          "Erro ao enviar formulário",
       );
       setSnackbarSeverity("error");
       setSnackbarOpen(true);
@@ -247,6 +257,12 @@ function Form() {
                   </span>{" "}
                   R$
                   {valorAtual},00
+                </div>
+                <div>
+                  <span style={{ color: "#22669A", fontWeight: "bold" }}>
+                    Idade mínima:
+                  </span>{" "}
+                  15 anos
                 </div>
               </>
             }
