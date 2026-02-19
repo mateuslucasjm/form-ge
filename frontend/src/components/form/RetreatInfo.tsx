@@ -34,13 +34,13 @@ export const RetreatInfo = () => {
           DATAS DO RETIRO:
         </strong>
         <br />
-        Sábado – 04/06/2026
+        Quinta – 04/06/2026
         <br />
-        Domingo – 05/06/2026
+        Sexta – 05/06/2026
         <br />
-        Segunda – 06/06/2026
+        Sábado – 06/06/2026
         <br />
-        Terça – 07/06/2026
+        Domingo – 07/06/2026
       </p>
     </div>
   );
