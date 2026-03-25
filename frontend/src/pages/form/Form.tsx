@@ -32,7 +32,7 @@ function Form() {
 
   const sexOptions = ["Masculino", "Feminino"];
   const maritalStatusOptions = ["Solteiro", "Casado"];
-  const lodgingOptions = ["Barraca", "Alojamento", "Casa própria"];
+  const lodgingOptions = ["Barraca", "Casa própria"];
   const billingTypeOptions = ["UNDEFINED", "BOLETO", "CREDIT_CARD", "PIX"];
 
   const [municipios, setMunicipios] = useState<
