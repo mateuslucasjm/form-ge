@@ -57,7 +57,7 @@ export const RetreatInfo = () => {
         <br />
         <br />
         <strong style={{ color: "#22669A", fontWeight: "bold" }}>
-          GRUPO DO GE NO WHATSAPP:
+          GRUPO DO GE (WHATSAPP):
         </strong>
         <br />
         <a href="https://chat.whatsapp.com/Kpd1H7HBGtbIahIlC9B4RT?mode=gi_t">
