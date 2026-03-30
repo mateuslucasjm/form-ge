@@ -54,6 +54,16 @@ export const RetreatInfo = () => {
         </strong>
         <br />
         Danth Duarte - (31) 9 9477-2140
+        <br />
+        <br />
+        <strong style={{ color: "#22669A", fontWeight: "bold" }}>
+          GRUPO DO GE NO WHATSAPP:
+        </strong>
+        <br />
+        <a href="https://chat.whatsapp.com/Kpd1H7HBGtbIahIlC9B4RT?mode=gi_t">
+          Clique aqui
+        </a>
+        <br />
       </p>
     </div>
   );
