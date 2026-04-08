@@ -32,7 +32,11 @@ function Form() {
 
   const sexOptions = ["Masculino", "Feminino"];
   const maritalStatusOptions = ["Solteiro", "Casado"];
-  const lodgingOptions = ["Barraca", "Casa própria"];
+  const isPonteNova = form.city === "Ponte Nova - MG";
+
+  const lodgingOptions = isPonteNova
+    ? ["Barraca", "Casa própria"]
+    : ["Barraca", "Casa própria", "Alojamento"];
   const billingTypeOptions = ["UNDEFINED", "BOLETO", "CREDIT_CARD", "PIX"];
 
   const [municipios, setMunicipios] = useState<
@@ -46,6 +50,12 @@ function Form() {
     }
     fetchMunicipios();
   }, []);
+
+  useEffect(() => {
+    if (form.city === "Ponte Nova" && form.lodging === "Alojamento") {
+      setForm({ lodging: undefined });
+    }
+  }, [form.city, form.lodging, setForm]);
 
   const monthInstallmentsMap: Record<number, number> = {
     12: 5,
