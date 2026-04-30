@@ -31,11 +31,11 @@ export const RetreatInfo = () => {
         <strong style={{ color: "#22669A", fontWeight: "bold" }}>2x</strong> no
         cartão
         <br />
-        01/05 até 15/05 → até{" "}
+        01/05 até 10/05 → até{" "}
         <strong style={{ color: "#22669A", fontWeight: "bold" }}>1x</strong> no
         cartão
         <br />
-        16/05 até 20/05 → apenas
+        11/05 até 20/05 → apenas
         <strong style={{ color: "#22669A", fontWeight: "bold" }}> PIX </strong> ou 
         <strong style={{ color: "#22669A", fontWeight: "bold" }}> boleto </strong> 
         <br />
