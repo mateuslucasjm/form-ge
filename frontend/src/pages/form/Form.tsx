@@ -37,7 +37,7 @@ function Form() {
   const lodgingOptions = isPonteNova
     ? ["Barraca", "Casa própria"]
     : ["Barraca", "Casa própria", "Alojamento"];
-  const billingTypeOptions = ["UNDEFINED", "BOLETO", "CREDIT_CARD", "PIX"];
+  const billingTypeOptions = ["UNDEFINED", "BOLETO", "PIX"];
 
   const [municipios, setMunicipios] = useState<
     { id: number; nome: string; estado: string; label: string }[]
